@@ -1,0 +1,77 @@
+{
+  "manifest_version": 3,
+  "name": "Sign Language Buddy",
+  "version": "0.1.0",
+  "description": "Two-way live captions for video calls: speech to captions, and typed or signed input back into the call.",
+  "minimum_chrome_version": "116",
+
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://meet.google.com/*", "https://*.zoom.us/*"],
+      "js": ["content-loader.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Sign Language Buddy"
+  },
+
+  "options_page": "options.html",
+
+  "permissions": [
+    "storage",
+    "offscreen",
+    "tabCapture",
+    "scripting"
+  ],
+
+  "host_permissions": [
+    "https://meet.google.com/*",
+    "https://*.zoom.us/*"
+  ],
+
+  "optional_host_permissions": [
+    "https://api.anthropic.com/*"
+  ],
+
+  "commands": {
+    "toggle-captions": {
+      "suggested_key": { "default": "Ctrl+Shift+C" },
+      "description": "Turn captions on or off"
+    },
+    "toggle-signing": {
+      "suggested_key": { "default": "Ctrl+Shift+S" },
+      "description": "Hold-to-sign: start or stop the camera pipeline"
+    },
+    "focus-compose": {
+      "suggested_key": { "default": "Ctrl+Shift+K" },
+      "description": "Focus the type-to-speak box"
+    }
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content/*.js",
+        "content/*.css",
+        "pcm-worklet.js",
+        "wasm/*",
+        "ort/*",
+        "models/*"
+      ],
+      "matches": ["https://meet.google.com/*", "https://*.zoom.us/*"]
+    }
+  ],
+
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  }
+}

@@ -1,0 +1,15 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.env
+.env.local
+
+# Model binaries are fetched, never committed
+packages/extension/public/models/*.task
+packages/extension/public/models/*.onnx
+
+# Raw video NEVER enters the repo (PLAN.md §7)
+*.mp4
+*.mov
+*.webm
+ml/data/raw/

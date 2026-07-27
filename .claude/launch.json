@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "extension-pages",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "5599",
+        "--directory",
+        "packages/extension/dist"
+      ],
+      "port": 5599
+    }
+  ]
+}

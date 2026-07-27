@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign Language Buddy — Settings</title>
+    <style>
+      :root { color-scheme: light dark; --fg: #12151a; --dim: #5b6472; --bg: #fff; --card: #f6f7f9; --line: #e2e6ec; --accent: #1f6feb; --warn-bg: #fff6e0; --warn-fg: #6b4e00; --danger-bg: #ffeceb; --danger-fg: #8a1c14; }
+      @media (prefers-color-scheme: dark) {
+        :root { --fg: #eef1f5; --dim: #a3adbb; --bg: #14171c; --card: #1c2027; --line: #2b3138; --accent: #6ea8ff; --warn-bg: #3a2f13; --warn-fg: #ffd98a; --danger-bg: #3a1d1a; --danger-fg: #ffb3ac; }
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+      main { max-width: 760px; margin: 0 auto; padding: 32px 24px 80px; }
+      h1 { font-size: 24px; margin: 0 0 4px; }
+      .sub { color: var(--dim); margin: 0 0 28px; }
+      section { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin-bottom: 18px; }
+      h2 { font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--dim); margin: 0 0 14px; }
+      .row { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 9px 0; border-bottom: 1px solid var(--line); }
+      .row:last-child { border-bottom: 0; }
+      .row .label { flex: 1; }
+      .row .label b { display: block; font-weight: 600; }
+      .row .label span { color: var(--dim); font-size: 13px; }
+      input[type="text"], input[type="password"], input[type="number"], select { font: inherit; padding: 7px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); min-width: 190px; }
+      input[type="range"] { width: 190px; }
+      button { font: inherit; font-weight: 600; padding: 8px 15px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); cursor: pointer; }
+      button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+      .notice { border-radius: 12px; padding: 16px 20px; margin-bottom: 18px; }
+      .notice.danger { background: var(--danger-bg); color: var(--danger-fg); }
+      .notice.warn { background: var(--warn-bg); color: var(--warn-fg); }
+      .notice h3 { margin: 0 0 8px; font-size: 16px; }
+      .notice p { margin: 0 0 10px; }
+      .notice ul { margin: 0 0 10px; padding-left: 20px; }
+      code { font-family: ui-monospace, Menlo, monospace; font-size: 13px; background: rgba(128,128,128,0.16); padding: 1px 5px; border-radius: 4px; }
+      a { color: var(--accent); }
+    </style>
+  </head>
+  <body>
+    <main id="root"></main>
+    <script src="options.js"></script>
+  </body>
+</html>

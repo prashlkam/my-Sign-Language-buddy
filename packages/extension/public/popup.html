@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sign Language Buddy</title>
+    <style>
+      :root { color-scheme: light dark; --fg: #12151a; --dim: #5b6472; --bg: #fff; --line: #e2e6ec; --accent: #1f6feb; }
+      @media (prefers-color-scheme: dark) {
+        :root { --fg: #eef1f5; --dim: #a3adbb; --bg: #14171c; --line: #2b3138; --accent: #6ea8ff; }
+      }
+      body { width: 300px; margin: 0; padding: 16px; background: var(--bg); color: var(--fg); font: 14px/1.5 system-ui, sans-serif; }
+      h1 { font-size: 15px; margin: 0 0 12px; }
+      .row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--line); }
+      .row:last-of-type { border-bottom: 0; }
+      .hint { color: var(--dim); font-size: 12px; margin: 10px 0 0; }
+      button { font: inherit; width: 100%; padding: 8px; margin-top: 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); cursor: pointer; }
+      kbd { font: 11px ui-monospace, monospace; background: rgba(128,128,128,0.18); border-radius: 4px; padding: 1px 5px; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="popup.js"></script>
+  </body>
+</html>

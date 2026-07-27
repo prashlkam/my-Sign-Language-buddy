@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    // No rootDir: this project deliberately typechecks @slb/core's sources
+    // directly (via `paths`) so a breaking change in core surfaces here
+    // immediately rather than at the next publish.
+    "noEmit": true,
+    "types": ["chrome"],
+    "paths": {
+      "@slb/core": ["../core/src/index.ts"]
+    }
+  },
+  "include": ["src/**/*"]
+}

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sign Language Buddy — audio worker</title>
+  </head>
+  <body>
+    <!--
+      Not user-facing. An offscreen document is the only place in MV3 that can
+      hold a MediaStream and an AudioContext: the service worker has no DOM and
+      gets torn down, and the content script cannot capture tab audio.
+    -->
+    <script src="offscreen.js"></script>
+  </body>
+</html>
